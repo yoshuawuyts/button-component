@@ -1,0 +1,26 @@
+{
+  "name": "button-component",
+  "version": "1.0.0",
+  "description": "button-component",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && NODE_ENV=test node test",
+    "test-cov": "standard && NODE_ENV=test istanbul cover test.js"
+  },
+  "repository": "yoshuawuyts/button-component",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "custom-element": "^2.0.0",
+    "tachyons-buttons": "^1.0.2"
+  },
+  "devDependencies": {
+    "standard": "^3.3.2",
+    "tape": "^4.0.0"
+  },
+  "files": [
+    "LICENSE",
+    "index.js",
+    "README.md"
+  ]
+}
