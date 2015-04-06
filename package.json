@@ -21,6 +21,7 @@
     "tachyons-buttons": "^1.0.2"
   },
   "devDependencies": {
+    "es6-symbol": "^2.0.1",
     "standard": "^3.3.2",
     "tape": "^4.0.0"
   },
