@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "es6-symbol": "^2.0.1",
+    "istanbul": "^0.3.13",
     "standard": "^3.3.2",
     "tape": "^4.0.0"
   },
