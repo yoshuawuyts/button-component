@@ -7,6 +7,7 @@ module.exports = BtnProto
 
 BtnProto.on('created', function () {
   this[count] = 0
+  this.textContent = textContent(this[count])
 })
 
 BtnProto.on('attribute', function (name, old, nw) {
@@ -19,6 +20,12 @@ Object.defineProperty(BtnProto.prototype, 'count', {
   set: function (value) {
     if (this[count] === value) return
     this[count] = value
-    this.textContent = 'clicked ' + this[count] + ' times'
+    this.textContent = textContent(this[count])
   }
 })
+
+// create the text content
+// textContent(Number:count) -> String:content
+function textContent (count) {
+  return 'clicked ' + count + ' times'
+}
