@@ -1,14 +1,20 @@
 {
   "name": "button-component",
   "version": "1.0.0",
-  "description": "button-component",
+  "description": "Create an extendable customElement button",
   "main": "index.js",
   "scripts": {
     "test": "standard && NODE_ENV=test node test",
     "test-cov": "standard && NODE_ENV=test istanbul cover test.js"
   },
   "repository": "yoshuawuyts/button-component",
-  "keywords": [],
+  "keywords": [
+    "webcomponents",
+    "webcomponent",
+    "component",
+    "browser",
+    "button"
+  ],
   "license": "MIT",
   "dependencies": {
     "custom-element": "^2.0.0",

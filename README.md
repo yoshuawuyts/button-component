@@ -1,11 +1,11 @@
-# &lt;button is="async-button"&gt;
+# button-component
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Downloads][downloads-image]][downloads-url]
 [![js-standard-style][standard-image]][standard-url]
 
-Progressively enhances a button to submit through XHR.
+Create an extendable customElement button.
 
 ## Installation
 ```bash
@@ -14,7 +14,24 @@ $ npm install button-component
 
 ## Usage
 ```js
+require('webcomponents.js')
 
+document.registerElement('custom-button', require('button-component'))
+
+var count = 0
+
+const customButton = document.createElement('button', 'custom-button')
+customButton.textContent = 'clicked ' + count + ' times'
+customButton.addEventListener('click', setClickedText)
+
+document.body.appendChild(customButton)
+
+// update the click counter and set the clicked text
+// setClickedText() -> Null
+function setClickedText () {
+  count++
+  customButton.textContent = 'clicked ' + count + ' times'
+}
 ```
 
 ## License
