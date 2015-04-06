@@ -20,7 +20,7 @@ document.registerElement('custom-button', require('button-component'))
 
 const customButton = document.createElement('button', 'custom-button')
 document.body.appendChild(customButton)
-// => <button is="custom-button"></custom-button>
+// => <button is="custom-button"></button>
 ```
 
 ## License
