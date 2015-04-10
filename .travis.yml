@@ -3,5 +3,7 @@ node_js:
 - "1"
 sudo: false
 language: node_js
+before_install:
+  - export CHROME_BIN=chromium-browser
 script: "npm run test-cov"
 after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"

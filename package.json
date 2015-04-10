@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cd example && open http://localhost:9966 && wzrd index.js",
     "test": "standard && NODE_ENV=test browserify test.js | tap-closer | smokestack --browser chrome",
-    "test-cov": "standard && NODE_ENV=test istanbul cover test.js"
+    "test-cov": "standard && NODE_ENV=test browserify -t browserify-istanbul test.js | tap-closer | smokestack --browser chrome"
   },
   "repository": "yoshuawuyts/button-component",
   "keywords": [
@@ -23,8 +23,8 @@
   },
   "devDependencies": {
     "browserify": "^9.0.8",
+    "browserify-istanbul": "^0.2.1",
     "es6-symbol": "^2.0.1",
-    "istanbul": "^0.3.13",
     "smokestack": "^3.2.2",
     "standard": "^3.3.2",
     "tap-closer": "^1.0.0",
