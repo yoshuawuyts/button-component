@@ -4,7 +4,8 @@
   "description": "Create an extendable customElement button",
   "main": "index.js",
   "scripts": {
-    "test": "standard && NODE_ENV=test node test",
+    "start": "cd example && open http://localhost:9966 && wzrd index.js",
+    "test": "standard && NODE_ENV=test browserify test.js | tap-closer | smokestack --browser chrome",
     "test-cov": "standard && NODE_ENV=test istanbul cover test.js"
   },
   "repository": "yoshuawuyts/button-component",
@@ -21,10 +22,15 @@
     "tachyons-buttons": "^1.0.2"
   },
   "devDependencies": {
+    "browserify": "^9.0.8",
     "es6-symbol": "^2.0.1",
     "istanbul": "^0.3.13",
+    "smokestack": "^3.2.2",
     "standard": "^3.3.2",
-    "tape": "^4.0.0"
+    "tap-closer": "^1.0.0",
+    "tape": "^4.0.0",
+    "webcomponents.js": "^0.6.0",
+    "wzrd": "^1.2.1"
   },
   "files": [
     "LICENSE",
