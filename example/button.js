@@ -1,5 +1,8 @@
+const customElement = require('custom-element')
 const symbol = require('es6-symbol')
-const BtnProto = require('../')
+
+const BtnProto = customElement(window.HTMLButtonElement.prototype)
+BtnProto.extends = 'button'
 
 const btn = Object.create(BtnProto)
 const textContent = symbol('textContent')
@@ -16,6 +19,10 @@ btn.on('attached', function () {
   this.textContent = fmtText(this[textContent], this[count])
 })
 
+btn.once('attached', function () {
+  addClickListener(this)
+})
+
 btn.on('attribute', function (name, old, nw) {
   if (name !== 'count') return
   this.count = nw
@@ -29,6 +36,13 @@ Object.defineProperty(btn.prototype, 'count', {
     this.textContent = fmtText(this[textContent], this[count])
   }
 })
+
+// update the click counter and set the clicked text
+function addClickListener (ctx) {
+  ctx.addEventListener('click', function () {
+    ctx.count = ctx.count + 1
+  })
+}
 
 // create the text content
 // textContent(String:content, Number:count) -> String:content
