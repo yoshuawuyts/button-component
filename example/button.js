@@ -1,12 +1,11 @@
 const customElement = require('custom-element')
 const symbol = require('es6-symbol')
 
-const BtnProto = customElement(window.HTMLButtonElement.prototype)
-BtnProto.extends = 'button'
-
-const btn = Object.create(BtnProto)
 const textContent = symbol('textContent')
 const count = symbol('count')
+
+const btn = customElement(window.HTMLButtonElement.prototype)
+btn.extends = 'button'
 
 module.exports = btn
 
