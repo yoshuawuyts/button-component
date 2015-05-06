@@ -37,6 +37,7 @@ Object.defineProperty(btn.prototype, 'count', {
 })
 
 // update the click counter and set the clicked text
+// obj -> null
 function addClickListener (ctx) {
   ctx.addEventListener('click', function () {
     ctx.count = ctx.count + 1
@@ -44,7 +45,7 @@ function addClickListener (ctx) {
 }
 
 // create the text content
-// textContent(String:content, Number:count) -> String:content
+// str, num -> str
 function fmtText (content, count) {
   return content.replace(/\$\{count\}/g, count)
 }
